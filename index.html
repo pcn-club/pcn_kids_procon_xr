@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+  <title>XR PCNこどもプロコン2024</title>
+  <body>
+<h1>XR PCNこどもプロコン2024</h1>
+<ul>
+  <li><div>
+    <a rel=ar href="sekigahara-fight.usdz">
+    <img src="sekigahara-fight.jpg"><br>
+    関ヶ原の戦い with micro:bit<br>古山穂高(12才)<br>micro:bit</a>
+    </div>
+    <a href="sekigahara-fight.html">Webアプリで見る</a> / <a href="sekigahara-fight.usdz">iPhoneで見る</a> / <a href=sekigahara-fight.glb>GLBデータ</a><br>
+    <a href=https://pcn.club/contest/nominate14.html>PCNこどもプロコン2024</a></li>
+</ul>
+
+<hr>
+forked from: <a href=https://code4fukui.github.io/xrgourmet/>xrgourmet</a><br>
+<a href=https://github.com/pcn-club/pcn_kids_procon_xr>src on GitHub</a><br>
+
+<script type="module">
+const ua = navigator.userAgent;
+//spanua.textContent = ua;
+
+const isSafari = ua.indexOf(" Safari/") >= 0 && ua.indexOf(" Chrome/") == -1;
+//const usdz = ua.indexOf("Vision Pro") >= 0 || ua.indexOf("iPhone") >= 0 || ua.indexOf("iPad") >= 0;
+
+const links = document.querySelectorAll("li > div > a");
+for (const a of links) {
+  const url = a.getAttribute("href");
+  const n = url.lastIndexOf(".") + 1;
+  const url2 = url.substring(0, n) + (isSafari ? "usdz" : "html");
+  //img.onclick = () => location.href = url2;
+  console.log(url2)
+  a.setAttribute("href", url2);
+}
+</script>
+
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+li {
+  margin: .3em 0 1.5em 0;
+  list-style-type: none;
+  width: 30vw;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-size: 85%;
+}
+li > div {
+  text-align: center;
+  margin-bottom: .2em;
+  font-size: 130%;
+}
+li img {
+  margin: .2em;
+  width: 80%;
+}
+a {
+  color: white !important;
+}
+</style>
+
+</body>
+</html>
